@@ -41,8 +41,8 @@ Follow these steps to use the JCL Calculator:
 
 ### Cylinder and Track Space Calculation
 
-1. Input the minimum number of cylinders.
-1. Optionally, input the maximum number of cylinders if applicable.
+1. Input the minimum number of cylinders or tracks.
+1. Optionally, input the maximum number of cylinders or tracks if applicable.
 1. Click "Calculate Cylinder Size" or "Calculate Track Size."
 
 ## Contributions
