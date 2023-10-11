@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Block Size Calculation Result</h1>
+    <p>LRECL: <span th:text="${fileSize}"></span></p>
+    <p>Blksize: <span th:text="${blockSize}"></span></p>
+    <p>Blocking factor: <span th:text="${blockingFactor}"></span></p>
+    <!-- Conditionally display SPACE parameter -->
+    <p th:if="${maxTrack > 0}">SPACE=(TRK,(<span th:text="${trackNum}"></span>,<span th:text="${maxTrack}"></span>))</p>
+    <p th:if="${maxTrack == 0}">SPACE=(TRK,<span th:text="${trackNum}"></span>)</p>
+    <br><br>
+    <a href="/">Back to Calculator</a>
+</body>
+</html>

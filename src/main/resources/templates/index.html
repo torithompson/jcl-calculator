@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JCL Space Calculator</title>
+</head>
+
+<body>
+    <h1>JCL Space Calculator</h1>
+    <form action="/calculate" method="post">
+        <label for="fileSize">File Size (in bytes):</label>
+        <input type="text" id="fileSize" name="fileSize" required><br><br>
+
+        <label for="blockingFactor">Blocking factor:</label>
+        <input type="text" id="blockingFactor" name="blockingFactor" required><br><br>
+
+        <button type="submit">Calculate Block Size</button>
+    </form>
+</body>
+
+</html>

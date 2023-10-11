@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculation Result</title>
+</head>
+
+<body>
+    <h1>Block Size Calculation Result</h1>
+    <p>LRECL: <span th:text="${fileSize}"></span></p>
+    <p>Blksize: <span th:text="${blockSize}"></span></p>
+    <p>Blocking factor: <span th:text="${blockingFactor}"></span></p>
+    <br><br>
+    <p>Calculate blocking space</p>
+    <form action="/block-calculate" method="post">
+        <input type="hidden" name="blockSize" th:value="${blockSize}">
+        <input type="hidden" name="blockingFactor" th:value="${blockingFactor}">
+        <input type="hidden" name="fileSize" th:value="${fileSize}">
+        <label for="recordNum">Minimum # of records:</label>
+        <input type="text" id="recordNum" name="recordNum" required><br>
+        <label for="maxRecords">Maximum # of records:</label>
+        <input type="text" id="maxRecords" name="maxRecords" placeholder="Leave empty if no min-max"><br>
+        <button type="submit">Calculate Block Size</button>
+    </form>
+    <br><br>
+    <p>Calculate Cylinder space:</p>
+    <form action="/cyl-calculate" method="post">
+        <input type="hidden" name="blockSize" th:value="${blockSize}">
+        <input type="hidden" name="blockingFactor" th:value="${blockingFactor}">
+        <input type="hidden" name="fileSize" th:value="${fileSize}">
+        <label for="cylNum">Minimum # of cylinders:</label>
+        <input type="text" id="cylNum" name="cylNum" required><br>
+        <label for="maxCylinders">Maximum # of cylinders:</label>
+        <input type="text" id="maxCylinders" name="maxCylinders" placeholder="Leave empty if no min-max"><br>
+        <button type="submit">Calculate Cylinder Size</button>
+    </form>
+    <p>Calculate Track space:</p>
+    <form action="/track-calculate" method="post">
+        <input type="hidden" name="blockSize" th:value="${blockSize}">
+        <input type="hidden" name="blockingFactor" th:value="${blockingFactor}">
+        <input type="hidden" name="fileSize" th:value="${fileSize}">
+        <label for="trackNum">Minimum # of tracks:</label>
+        <input type="text" id="trackNum" name="trackNum" required><br>
+        <label for="maxTrack">Maximum # of tracks:</label>
+        <input type="text" id="maxTrack" name="maxTrack" placeholder="Leave empty if no min-max"><br>
+        <button type="submit">Calculate Track Size</button>
+    </form>
+    <a href="/">Back to Calculator homepage</a>
+</body>
+
+
+
+</html>
