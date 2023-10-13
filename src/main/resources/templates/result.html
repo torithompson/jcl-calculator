@@ -3,6 +3,7 @@
 
 <head>
     <title>Calculation Result</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
@@ -17,9 +18,9 @@
         <input type="hidden" name="blockingFactor" th:value="${blockingFactor}">
         <input type="hidden" name="fileSize" th:value="${fileSize}">
         <label for="recordNum">Minimum # of records:</label>
-        <input type="text" id="recordNum" name="recordNum" required><br>
+        <input type="number" id="recordNum" name="recordNum" min="0" required><br>
         <label for="maxRecords">Maximum # of records:</label>
-        <input type="text" id="maxRecords" name="maxRecords" placeholder="Leave empty if no min-max"><br>
+        <input type="number" id="maxRecords" name="maxRecords" min="0" placeholder="Leave empty if no min-max"><br>
         <button type="submit">Calculate Block Size</button>
     </form>
     <br><br>
@@ -29,22 +30,24 @@
         <input type="hidden" name="blockingFactor" th:value="${blockingFactor}">
         <input type="hidden" name="fileSize" th:value="${fileSize}">
         <label for="cylNum">Minimum # of cylinders:</label>
-        <input type="text" id="cylNum" name="cylNum" required><br>
+        <input type="number" id="cylNum" name="cylNum" min="0" required><br>
         <label for="maxCylinders">Maximum # of cylinders:</label>
-        <input type="text" id="maxCylinders" name="maxCylinders" placeholder="Leave empty if no min-max"><br>
+        <input type="number" id="maxCylinders" name="maxCylinders" min="0" placeholder="Leave empty if no min-max"><br>
         <button type="submit">Calculate Cylinder Size</button>
     </form>
+    <br><br>
     <p>Calculate Track space:</p>
     <form action="/track-calculate" method="post">
         <input type="hidden" name="blockSize" th:value="${blockSize}">
         <input type="hidden" name="blockingFactor" th:value="${blockingFactor}">
         <input type="hidden" name="fileSize" th:value="${fileSize}">
         <label for="trackNum">Minimum # of tracks:</label>
-        <input type="text" id="trackNum" name="trackNum" required><br>
+        <input type="number" id="trackNum" name="trackNum" min="0" required><br>
         <label for="maxTrack">Maximum # of tracks:</label>
-        <input type="text" id="maxTrack" name="maxTrack" placeholder="Leave empty if no min-max"><br>
+        <input type="number" id="maxTrack" name="maxTrack" min="0" placeholder="Leave empty if no min-max"><br>
         <button type="submit">Calculate Track Size</button>
     </form>
+    <br>
     <a href="/">Back to Calculator homepage</a>
 </body>
 

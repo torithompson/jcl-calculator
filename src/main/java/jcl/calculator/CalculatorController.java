@@ -17,8 +17,8 @@ public class CalculatorController {
     public String calculateBlockSize(@RequestParam("fileSize") int fileSize,
             @RequestParam("blockingFactor") int blockingFactor, Model model) {
         // Perform your space calculation logic here
-        int blockSize = fileSize * blockingFactor;
-
+        double dblBlockSize = (double) fileSize * blockingFactor;
+        int blockSize = (int) Math.ceil(dblBlockSize);
         // Pass the result to the front end for display
         model.addAttribute("fileSize", fileSize);
         model.addAttribute("blockSize", blockSize);
@@ -33,7 +33,8 @@ public class CalculatorController {
             @RequestParam("recordNum") int recordNum, @RequestParam(value= "maxRecords", required = false) String maxRecords, Model model) {
         // Perform your space calculation logic here
         if (maxRecords.isEmpty()) {
-            int blockSpace = recordNum / blockingFactor;
+            double dblBlockSpace = (double) recordNum / blockingFactor;
+            int blockSpace = (int) Math.ceil(dblBlockSpace);
             int maxSpace = 0;
             // Pass the result to the front end for display
             model.addAttribute("fileSize", fileSize);
@@ -42,8 +43,9 @@ public class CalculatorController {
             model.addAttribute("blockSpace", blockSpace);
             model.addAttribute("maxSpace", maxSpace);
         } else {
-            int minSpace = recordNum / blockingFactor;
-            int maxSpace = (Integer.parseInt(maxRecords) - recordNum) / 15 / blockingFactor;
+            double dblMinSpace = (double) recordNum / blockingFactor;
+            int minSpace = (int) Math.ceil(dblMinSpace);
+            int maxSpace = (int) Math.ceil((double) (Integer.parseInt(maxRecords) - recordNum) / (15 * blockingFactor));
             // Pass the result to the front end for display
             model.addAttribute("maxSpace", maxSpace);
             model.addAttribute("fileSize", fileSize);
@@ -69,7 +71,7 @@ public class CalculatorController {
             model.addAttribute("blockingFactor", blockingFactor);
             model.addAttribute("cylNum", cylNum);
         } else {
-            int maxCyl = (Integer.parseInt(maxCylinders) - cylNum) / 15;
+            int maxCyl = (int) Math.ceil((double) (Integer.parseInt(maxCylinders) - cylNum) / 15);
             model.addAttribute("fileSize", fileSize);
             model.addAttribute("blockSize", blockSize);
             model.addAttribute("blockingFactor", blockingFactor);
@@ -92,7 +94,7 @@ public class CalculatorController {
             model.addAttribute("blockingFactor", blockingFactor);
             model.addAttribute("trackNum", trackNum);
         } else {
-            int maxTrack = (Integer.parseInt(maxTracks) - trackNum) / 15;
+            int maxTrack = (int) Math.ceil((double) (Integer.parseInt(maxTracks) - trackNum) / 15);
             model.addAttribute("fileSize", fileSize);
             model.addAttribute("blockSize", blockSize);
             model.addAttribute("blockingFactor", blockingFactor);
