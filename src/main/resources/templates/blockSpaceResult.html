@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <h1>Block Size Calculation Result</h1>
@@ -11,10 +12,17 @@
     <p>Blksize: <span th:text="${blockSize}"></span></p>
     <p>Blocking factor: <span th:text="${blockingFactor}"></span></p>
     
-    <span th:if="${maxSpace > 0}"><p>DCB=(LRECL=<span th:text="${fileSize}"></span>,BLKSIZE=<span th:text="${blockSize}"></span>,RECFM=FB),<br>
-    SPACE=(<span th:text="${blockSize}"></span>,<span th:text="${blockSpace}"></span>(<span th:text="${minSpace}"></span>,<span th:text="${maxSpace}"></span>))</p></span>
-    <span th:if="${maxSpace == 0}"><p>DCB=(LRECL=<span th:text="${fileSize}"></span>,BLKSIZE=<span th:text="${blockSize}"></span>,RECFM=FB),<br></p>
-    SPACE=(<span th:text="${blockSize}"></span>,<span th:text="${blockSpace}"></span>)</span>
+    <div>
+        <span th:if="${maxSpace > 0}">
+            DCB=(LRECL=<span th:text="${fileSize}"></span>,BLKSIZE=<span th:text="${blockSize}"></span>,RECFM=FB),<br>
+            SPACE=(<span th:text="${blockSize}"></span>,<span th:text="${blockSpace}"></span>(<span
+                th:text="${minSpace}"></span>,<span th:text="${maxSpace}"></span>))
+        </span>
+        <span th:if="${maxSpace == 0}">
+            DCB=(LRECL=<span th:text="${fileSize}"></span>,BLKSIZE=<span th:text="${blockSize}"></span>,RECFM=FB),<br>
+            SPACE=(<span th:text="${blockSize}"></span>,<span th:text="${blockSpace}"></span>)
+        </span>
+    </div>
     <br><br>
     <a href="/">Back to Calculator</a>
 </body>
