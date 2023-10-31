@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Style for the body */
 body {
     font-family: Arial, sans-serif;
@@ -63,4 +64,71 @@ p {
 
 div {
     margin-left: 3em;
+=======
+/* Style for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the header */
+h1 {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Style for the paragraphs */
+p {
+    margin: 10px;
+}
+
+/* Style for labels */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 3em;
+}
+
+/* Style for input fields */
+input[type="number"] {
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 3em;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 3em;
+    margin-top: 1em;
+}
+
+/* Style for the back link */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #0073e6;
+    text-decoration: none;
+    margin-bottom: 2em;
+}
+
+p {
+    margin-left: 3em;
+}
+
+div {
+    margin-left: 3em;
+>>>>>>> ede56408fd382026dea60306501ca1757c83daaa
 }
